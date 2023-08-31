@@ -1,45 +1,12 @@
-# plugin-starter
+# halo-plugin-chirp
 
-Halo 2.0 插件开发快速开始模板。
+本插件是主题 halo-theme-chirpy 的拓展插件
 
-## 开发环境
+我们选择使用插件来扩展编辑器实现代码块，复选框以及提示条等自定义样式的输入，方便您对于内容的编辑，减少复杂样式编辑带来的割裂感。
 
-插件开发的详细文档请查阅：<https://docs.halo.run/developer-guide/plugin/hello-world>
+## 插件效果
 
-```bash
-git clone git@github.com:halo-sigs/plugin-starter.git
+- Prompt 提示条
 
-# 或者当你 fork 之后
-
-git clone git@github.com:{your_github_id}/plugin-starter.git
-```
-
-```bash
-cd path/to/plugin-starter
-```
-
-```bash
-# macOS / Linux
-./gradlew pnpmInstall
-
-# Windows
-./gradlew.bat pnpmInstall
-```
-
-```bash
-# macOS / Linux
-./gradlew build
-
-# Windows
-./gradlew.bat build
-```
-
-修改 Halo 配置文件：
-
-```yaml
-halo:
-  plugin:
-    runtime-mode: development
-    fixedPluginPath:
-      - "/path/to/plugin-starter"
-```
+![gvx9h-r0h5b](https://github.com/AirboZH/halo-plugin-chirpy/assets/50261327/b01cb228-39df-4801-8bc5-4d59a569345e)
+![b0eae857e7200be756d72c22f37c58b](https://github.com/AirboZH/halo-plugin-chirpy/assets/50261327/4a2dbd9e-a80e-4e74-9ecb-7dc7c21b923f)

@@ -1,6 +1,6 @@
 # halo-plugin-chirp
 
-本插件是主题 halo-theme-chirpy 的拓展插件
+本插件是主题 [halo-theme-chirpy](https://github.com/AirboZH/halo-theme-chirpy) 的拓展插件
 
 我们选择使用插件来扩展编辑器实现代码块，复选框以及提示条等自定义样式的输入，方便您对于内容的编辑，减少复杂样式编辑带来的割裂感。
 

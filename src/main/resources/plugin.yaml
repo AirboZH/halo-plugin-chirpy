@@ -2,19 +2,17 @@ apiVersion: plugin.halo.run/v1alpha1
 kind: Plugin
 metadata:
   # The name defines how the plugin is invoked,A unique name
-  name: PluginStarter
+  name: plugin-chirpy
 spec:
   enabled: true
-  requires: ">=2.5.0"
+  requires: ">=2.7.0"
   author:
-    name: Halo OSS Team
-    website: https://github.com/halo-dev
-  logo: https://halo.run/logo
-  # 'homepage' usually links to the GitHub repository of the plugin
-  homepage: https://github.com/halo-dev/plugin-starter
-  # 'displayName' explains what the plugin does in only a few words
-  displayName: "插件快速开始模板"
-  description: "这是一个插件快速开始模板"
+    name: AirboZH
+    website: https://github.com/airbozh
+  logo: https://chirpy-img.netlify.app/commons/avatar.jpg
+  homepage: https://github.com/airbozh/halo-plugin-chirpy
+  displayName: "Chirpy Add-on"
+  description: "Chirpy主题适配插件"
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
+      url: "https://github.com/airbozh/halo-plugin-chirpy/blob/main/LICENSE"

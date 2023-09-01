@@ -1,4 +1,4 @@
-package run.halo.starter;
+package cn.airbozh.chirpy;
 
 import org.pf4j.PluginWrapper;
 import org.springframework.stereotype.Component;

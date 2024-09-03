@@ -1,4 +1,11 @@
-import {mergeAttributes, Node, textblockTypeInputRule, wrappingInputRule} from "@tiptap/core";
+import {
+  mergeAttributes,
+  Node,
+  textblockTypeInputRule,
+  wrappingInputRule,
+  VueNodeViewRenderer
+} from "@halo-dev/richtext-editor";
+import ChirpyPromptComponent from "./ChirpyPromptComponent.vue";
 
 export interface ChirpyPromptOptions {
   types: string[],
@@ -41,29 +48,33 @@ export const ChirpyPrompt = Node.create<ChirpyPromptOptions>({
   },
 
   parseHTML() {
-    return this.options.types
-      .map(type => ({
-        tag: `blockquote[class="prompt-${type}"]`,
-        attrs: {type},
-      }))
+    return [
+      {
+        tag: 'chirpy-prompt',
+      }
+    ]
   },
 
   renderHTML({node, HTMLAttributes}) {
     const hasType = this.options.types.includes(node.attrs.type)
     const type = hasType ? node.attrs.type : this.options.types[0]
-    return ['blockquote', mergeAttributes(HTMLAttributes, {class: `prompt-${type}`,}), 0]
+    return ['chirpy-prompt', mergeAttributes(HTMLAttributes, {class: `prompt-${type}`,}), 0]
   },
-
-  addCommands() {
-    return {
-      setType: attributes => ({commands}) => {
-        if (!this.options.types.includes(attributes.type)) {
-          return false
-        }
-        return commands.setNode(this.name, attributes)
-      },
-    }
+  
+  addNodeView() {
+    return VueNodeViewRenderer(ChirpyPromptComponent)
   },
+  
+  // addCommands() {
+  //   return {
+  //     setType: attributes => ({commands}) => {
+  //       if (!this.options.types.includes(attributes.type)) {
+  //         return false
+  //       }
+  //       return commands.setNode(this.name, attributes)
+  //     },
+  //   }
+  // },
 
   addInputRules() {
     return this.options.types.map(type => {

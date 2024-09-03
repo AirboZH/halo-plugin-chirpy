@@ -65,7 +65,7 @@ jobs:
     if: github.event_name == 'release'
     steps:
       - name: Download plugin-starter jar
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: plugin-starter
           path: build/libs

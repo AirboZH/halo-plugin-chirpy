@@ -11,9 +11,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@halo-dev/richtext-editor": "2.19.0",
     "@halo-dev/components": "^1.5.0",
     "@halo-dev/console-shared": "^2.7.0",
-    "@tiptap/core": "^2.1.7",
     "canvas-confetti": "^1.6.0",
     "vue": "^3.3.4"
   },

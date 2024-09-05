@@ -43,7 +43,10 @@ export const ChirpyPrompt = Node.create<ChirpyPromptOptions>({
     return {
       type: {
         default: 'tip',
-      }
+      },
+      content: {
+        default: "",
+      },
     }
   },
 
@@ -58,7 +61,10 @@ export const ChirpyPrompt = Node.create<ChirpyPromptOptions>({
   renderHTML({node, HTMLAttributes}) {
     const hasType = this.options.types.includes(node.attrs.type)
     const type = hasType ? node.attrs.type : this.options.types[0]
-    return ['chirpy-prompt', mergeAttributes(HTMLAttributes, {class: `prompt-${type}`,}), 0]
+    return ['chirpy-prompt',
+      mergeAttributes(HTMLAttributes, {class: `prompt-${type}`,}), 
+      `${HTMLAttributes.content}`,
+    ]
   },
   
   addNodeView() {

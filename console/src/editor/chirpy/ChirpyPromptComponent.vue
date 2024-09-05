@@ -2,15 +2,16 @@
 import { nodeViewProps, NodeViewWrapper } from "@halo-dev/richtext-editor";
 const props = defineProps(nodeViewProps);
 
-console.log("props", props)
-
+const updateInput = (e: any) => {
+  props.updateAttributes({ content: e.target.value });
+};
 </script>
 
 <template>
   <node-view-wrapper
     class="chirpy-prompt-node-view"
     as="div"
-    contenteditable="true"
+    contenteditable="false"
   >
     <div class="chirpy-prompt-block" :class="{ 
       'prompt-tip': props.node.attrs.type === 'tip',
@@ -18,9 +19,7 @@ console.log("props", props)
       'prompt-warning': props.node.attrs.type === 'warning',
       'prompt-danger': props.node.attrs.type === 'danger',
      }">
-      <span class="prompt-text">
-        {{ props.node.textContent }}
-      </span>
+      <input class="prompt-text" type="text" :value="props.node.attrs.content" @input="updateInput">
     </div>
   </node-view-wrapper>
 </template>
@@ -42,7 +41,7 @@ console.log("props", props)
   background-color: rgb(248, 215, 218, 0.56);
 }
 
-.chirpy-prompt-node-view{
+.chirpy-prompt-node-view {
   margin: .75em 10px 10px;
 }
 
@@ -55,5 +54,11 @@ console.log("props", props)
 
 .prompt-text {
   margin: 5px 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
 }
 </style>
